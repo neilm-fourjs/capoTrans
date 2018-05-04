@@ -1,0 +1,4 @@
+#dbi.default.driver = "dbmsqt"
+#dbi.database.mydatabase.source = "capotrans.db"
+
+ct.logfile = "/sdcard/GeneroApps/capotrans.log"

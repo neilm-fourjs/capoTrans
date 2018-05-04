@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="64"
+   height="64"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-988.36218)"
+     id="layer1">
+    <text
+       x="14.464286"
+       y="40.42857"
+       transform="translate(0,988.36218)"
+       id="text2985"
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS Bold"><tspan
+         x="14.464286"
+         y="40.42857"
+         id="tspan2987" /></text>
+    <text
+       x="15.535714"
+       y="51.142857"
+       transform="translate(0,988.36218)"
+       id="text2989"
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS Bold"><tspan
+         x="15.535714"
+         y="51.142857"
+         id="tspan2991" /></text>
+    <use
+       transform="translate(-2.6523131,-4.8183678)"
+       id="use2993"
+       x="0"
+       y="0"
+       width="64"
+       height="64"
+       xlink:href="#text2989" />
+    <text
+       x="5.5357141"
+       y="50.42857"
+       transform="translate(0,988.36218)"
+       id="text2995"
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS Bold"><tspan
+         x="5.5357141"
+         y="50.42857"
+         id="tspan2997" /></text>
+    <text
+       x="9.6428576"
+       y="45.25"
+       transform="translate(0,988.36218)"
+       id="text2999"
+       xml:space="preserve"
+       style="font-size:56px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS Bold"><tspan
+         x="9.6428576"
+         y="45.25"
+         id="tspan3001" /></text>
+    <text
+       x="3.9285715"
+       y="55.25"
+       transform="translate(0,988.36218)"
+       id="text3003"
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Century Gothic;-inkscape-font-specification:Sans Bold"><tspan
+         x="3.9285715"
+         y="55.25"
+         id="tspan3005" /></text>
+    <text
+       x="4.6428571"
+       y="58.107143"
+       transform="translate(0,988.36218)"
+       id="text3007"
+       xml:space="preserve"
+       style="font-size:64px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Century Gothic;-inkscape-font-specification:Sans Bold"><tspan
+         x="4.6428571"
+         y="58.107143"
+         id="tspan3009" /></text>
+    <text
+       x="4.4642859"
+       y="60.785713"
+       transform="translate(0,988.36218)"
+       id="text3011"
+       xml:space="preserve"
+       style="font-size:64px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Century Gothic;-inkscape-font-specification:Sans Bold"><tspan
+         x="4.4642859"
+         y="60.785713"
+         id="tspan3013" /></text>
+    <text
+       x="-1.1212187"
+       y="1226.4847"
+       transform="scale(1.167678,0.85640047)"
+       id="text3236"
+       xml:space="preserve"
+       style="font-size:95.14871979px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Century Gothic;-inkscape-font-specification:Sans Bold"><tspan
+         x="-1.1212187"
+         y="1226.4847"
+         id="tspan3238">#</tspan></text>
+  </g>
+</svg>

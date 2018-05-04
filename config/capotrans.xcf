@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<APPLICATION Parent="defaultgwc"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gas/2.50/cfextwa.xsd">
+	<RESOURCE Id="res.my.path" Source="INTERNAL">/home/neilm/all/mobile/capoTrans</RESOURCE>
+	<EXECUTION>
+		<ENVIRONMENT_VARIABLE Id="FGLIMAGEPATH">../resources</ENVIRONMENT_VARIABLE>
+		<PATH>$(res.my.path)/bin</PATH>
+		<MODULE>capotrans.42r</MODULE>
+	</EXECUTION>
+</APPLICATION>

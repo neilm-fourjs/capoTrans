@@ -1,0 +1,75 @@
+
+TOPMENU
+	GROUP file ( TEXT="File" )
+		COMMAND cancel ( TEXT="Exit", IMAGE="ic_back" )
+	END -- G
+END -- TM
+
+TOOLBAR
+	ITEM cancel ( TEXT="Exit", IMAGE="ic_back" )
+	ITEM accept  ( TEXT="Edit", IMAGE="ic_edit" )
+	ITEM newshape
+	ITEM save
+END -- TB
+
+LAYOUT ( TEXT="ChordShapes", IMAGE="capotrans" )
+VBOX
+GRID
+{
+[l000][cn                  ]
+<G "Details"                 >
+ [l001][dn                  ]
+ [l002][r][name ]
+ [l004][ps]
+ [l005][sc]
+ [l006][vi]
+}
+END -- GRID
+GRID ( HIDDEN )
+{
+[l1         ]
+[s1|s2|s3|s4|s5|s6]
+}
+END -- GRID
+GRID
+{
+["        "][wc                ]["        "]
+            [                  ]
+            [                  ]
+            [                  ]
+            [                  ]
+            [                  ]
+            [                  ]
+            [                  ]
+            [                  ]
+}
+END -- GRID
+END -- VBOX
+
+ATTRIBUTES
+LABEL l000 : lab1,TEXT="Choose Shape:", JUSTIFY=RIGHT;
+LABEL l001 : lab1,TEXT="Shape:", JUSTIFY=RIGHT;
+LABEL l002 : lab2,TEXT="Root/Name:", JUSTIFY=RIGHT;
+LABEL l004 : lab4,TEXT="Position:", JUSTIFY=RIGHT;
+LABEL l005 : lab5,TEXT="Score:", JUSTIFY=RIGHT,HIDDEN;
+LABEL l006 : lab6,TEXT="Variation:", JUSTIFY=RIGHT;
+
+COMBOBOX cn = FORMONLY.ch_no,INITIALIZER=cb_chordno, NOT NULL;
+dn = FORMONLY.dspnam;
+r = FORMONLY.root_note,UPSHIFT,SAMPLE="G";
+name = FORMONLY.name;
+ps = FORMONLY.pos,SAMPLE="0";
+sc = FORMONLY.score,SAMPLE="0",HIDDEN;
+vi = FORMONLY.vari,SAMPLE="0";
+
+LABEL l1 : l1,TEXT="E-A-D-G-B-E",JUSTIFY=RIGHT, HIDDEN;
+s1 = FORMONLY.str1, HIDDEN;
+s2 = FORMONLY.str2, HIDDEN;
+s3 = FORMONLY.str3, HIDDEN;
+s4 = FORMONLY.str4, HIDDEN;
+s5 = FORMONLY.str5, HIDDEN;
+s6 = FORMONLY.str6, HIDDEN;
+
+WEBCOMPONENT wc = FORMONLY.wc, WIDTH=100 PIXELS, HEIGHT=150 PIXELS, SIZEPOLICY=FIXED,
+  COMPONENTTYPE = "chord_diag2";
+
