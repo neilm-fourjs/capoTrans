@@ -17,10 +17,10 @@ onICHostReady = function(version) {
 	}
 }
 
-function checkKeyPadSvg() {
-	/*dbg = document.getElementById("dbg");
-	dbg.innerHTML = "debug js loaded";*/
+function checkKeyPad() {
 	isDown = false;
+
+	//dbg = document.getElementById('dbg');
 
 	r01 = document.getElementById('but01');
 	r02 = document.getElementById('but02');
@@ -85,17 +85,17 @@ function isTouchEvent(e) {
 
 function down(e) {
 	// Make sure has the 4gl focus if user clicks inside
+	// dbg.innerHTML = "dn:"+e.target.getAttribute("id");
 	gICAPI.SetFocus();
 
 	isDown = true;
 	if (isTouchEvent(e)) e.preventDefault();
 	/*gICAPI.SetData( e.target.getAttribute("val") );*/
-	/*dbg.innerHTML = "dn:"+e.target.getAttribute("val");*/
-	gICAPI.Action('key'+e.target.getAttribute("val"));
+	gICAPI.Action(e.target.getAttribute("id"));
 }
 
 function up(e) {
 	isDown = false; 
 	if (isTouchEvent(e)) e.preventDefault();
-	/*dbg.innerHTML = "up:"+e.target.getAttribute("val");*/
+	// dbg.innerHTML = "up:"+e.target.getAttribute("id");
 }

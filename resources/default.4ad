@@ -32,24 +32,24 @@
 	<ActionDefault name="prevtab" text="Previous Folder Tab" acceleratorName="Control-Shift-Tab" contextMenu="no"/>
 	<ActionDefault name="dialogtouched" validate="no" defaultView="no"  contextMenu="no"/>
 
-	<ActionDefault name="key01" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key02" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key03" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key04" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key05" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key06" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key07" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key08" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key09" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key10" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key11" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key12" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key13" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key14" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key15" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key16" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key17" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
-	<ActionDefault name="key18" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but01" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but02" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but03" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but04" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but05" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but06" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but07" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but08" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but09" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but10" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but11" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but12" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but13" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but14" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but15" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but16" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but17" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
+	<ActionDefault name="but18" text="" image="" validate="no" contextMenu="no" defaultView="no"/>
 
 	<ActionDefault name="about" text="About" image="fa-about" validate="no" contextMenu="no"/>
 	<ActionDefault name="custshapes" text="Custom Shapes" image="fa-user" validate="no" contextMenu="no"/>

@@ -40,7 +40,7 @@ IMPORT FGL gl_lib
 		str6 SMALLINT, -- high e
 		dspnam STRING
 	END RECORD
-			
+	DEFINE m_resourcePath STRING
 	DEFINE m_chords, m_new STRING
 	DEFINE m_sharp BOOLEAN
 	DEFINE m_lev, m_lev2 SMALLINT
@@ -56,19 +56,11 @@ MAIN
 	DEFINE l_keypad STRING
 
 	CALL STARTLOG( base.Application.getResourceEntry( "ct.logfile" ) )
-
+	LET m_resourcePath = fgl_getEnv("CTRESOURCEPATH")
 	CALL get_shapes("shapes2.txt") -- custom shapes, if exist
 	CALL get_notes()
 
-	IF fgl_getEnv("GST") = "1" THEN
-		DISPLAY "FGLSERVER=",fgl_getEnv("FGLSERVER")
-	END IF
-
-&ifdef VER2
-	OPEN FORM f FROM "capotrans2_leo"
-&else
 	OPEN FORM f FROM "capotrans"
-&endif
 	DISPLAY FORM f
 
 	LET alts[8].desc = "" -- make sure there some rows in the table.
@@ -82,46 +74,30 @@ MAIN
 				ON CHANGE m_lev
 
 				ON ACTION clr LET m_chords = ""
-&ifdef VER2
-				ON ACTION key01 DISPLAY "01" LET m_chords = m_chords.append(" A")
-				ON ACTION key02 DISPLAY "02" LET m_chords = m_chords.append(" B")
-				ON ACTION key03 DISPLAY "03" LET m_chords = m_chords.append(" C")
-				ON ACTION key07 DISPLAY "07" LET m_chords = m_chords.append(" D")
-				ON ACTION key08 DISPLAY "08" LET m_chords = m_chords.append(" E")
-				ON ACTION key09 DISPLAY "09" LET m_chords = m_chords.append(" F")
-				ON ACTION key13 DISPLAY "13" LET m_chords = m_chords.append(" G")
 
-				ON ACTION key04 DISPLAY "04" LET m_chords = m_chords.append("m")
-				ON ACTION key05 DISPLAY "05" LET m_chords = m_chords.append("5")
-				ON ACTION key06 DISPLAY "06" LET m_chords = m_chords.append("sus4")
+				ON ACTION but01 LET m_chords = m_chords.append(" A")
+				ON ACTION but02 LET m_chords = m_chords.append(" B")
+				ON ACTION but03 LET m_chords = m_chords.append(" C")
+				ON ACTION but04 LET m_chords = m_chords.append(" D")
+				ON ACTION but05 LET m_chords = m_chords.append(" E")
+				ON ACTION but06 LET m_chords = m_chords.append(" F")
+				ON ACTION but07 LET m_chords = m_chords.append(" G")
 
-				ON ACTION key10 DISPLAY "10" LET m_chords = m_chords.append("M7")
-				ON ACTION key11 DISPLAY "11" LET m_chords = m_chords.append("6")
-				ON ACTION key12 DISPLAY "12" LET m_chords = m_chords.append("sus2")
+				ON ACTION but08 LET m_chords = m_chords.append("#")
+				ON ACTION but09 LET m_chords = m_chords.append("b")
+				ON ACTION but10 LET m_chords = m_chords.append("m")
 
-				ON ACTION key14 DISPLAY "14" LET m_chords = m_chords.append("b")
-				ON ACTION key15 DISPLAY "15" LET m_chords = m_chords.append("#")
-				ON ACTION key16 DISPLAY "16" LET m_chords = m_chords.append("7")
-				ON ACTION key17 DISPLAY "17" LET m_chords = m_chords.append("9")
-				ON ACTION key18 DISPLAY "18" LET m_chords = ""
-&else
-				ON ACTION na LET m_chords = m_chords.append(" A")
-				ON ACTION nb LET m_chords = m_chords.append(" B")
-				ON ACTION nc LET m_chords = m_chords.append(" C")
-				ON ACTION nd LET m_chords = m_chords.append(" D")
-				ON ACTION ne LET m_chords = m_chords.append(" E")
-				ON ACTION nf LET m_chords = m_chords.append(" F")
-				ON ACTION ng LET m_chords = m_chords.append(" G")
-				ON ACTION fl  LET m_chords = m_chords.append("b")
-				ON ACTION sp  LET m_chords = m_chords.append("#")
-				ON ACTION mn LET m_chords = m_chords.append("m")
-				ON ACTION m7 LET m_chords = m_chords.append("M7")
-				ON ACTION n7 LET m_chords = m_chords.append("7")
-				ON ACTION n9 LET m_chords = m_chords.append("9")
-				ON ACTION n6 LET m_chords = m_chords.append("6")
-				ON ACTION s2 LET m_chords = m_chords.append("sus2")
-				ON ACTION s4 LET m_chords = m_chords.append("sus4")
-&endif
+				ON ACTION but11 LET m_chords = m_chords.append("M7")
+				ON ACTION but12 LET m_chords = m_chords.append("7")
+				ON ACTION but13 LET m_chords = m_chords.append("5")
+				ON ACTION but14 LET m_chords = m_chords.append("6")
+				ON ACTION but15 LET m_chords = m_chords.append("9")
+
+				ON ACTION but16 LET m_chords = m_chords.append("sus4")
+				ON ACTION but17 LET m_chords = m_chords.append("sus2")
+
+				ON ACTION but18 LET m_chords = ""
+
 			END INPUT
 			DISPLAY ARRAY alts TO arr.*
 			END DISPLAY
@@ -186,11 +162,11 @@ FUNCTION get_shapes(l_file)
 	LET c = base.channel.create()
 
 	CALL chord_shapes.clear()
-
+	LET l_file = os.Path.join(m_resourcePath,l_file)
 	IF NOT os.Path.exists( l_file ) THEN
-		LET l_file = "shapes.txt" -- defaults
+		LET l_file = os.Path.join(m_resourcePath,"shapes.txt") -- defaults
 		IF NOT os.Path.exists( l_file ) THEN
-			CALL gl_winMessage("Error","Failed to find "||l_file||"\npwd: "||os.path.pwd(),"exclamation")
+			CALL gl_winMessage("Error",SFMT("Failed to find '%1'",l_file),"exclamation")
 			EXIT PROGRAM
 		END IF
 	END IF
@@ -239,7 +215,7 @@ FUNCTION getchords()
 	END FOR	
 
 	FOR x = alts.getLength() TO 1 STEP -1
-		LET alts[x].desc = "Pos: ",(alts[x].pos USING "<#"),"  Rating:",(alts[x].score USING "<#")
+		LET alts[x].desc = (alts[x].pos USING "<#")," R:",(alts[x].score USING "<#")
 		--DISPLAY "Remove invalid:",x," :",alts[x].score
 		IF alts[x].score = -1 THEN 
 			CALL alts.deleteElement( x )

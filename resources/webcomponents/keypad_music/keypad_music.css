@@ -1,0 +1,36 @@
+body {
+	border-width: 0px;
+	padding:0px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-color: black;
+	color: white;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.butbox {
+	margin-left: auto; 
+	margin-right: auto;
+	border: none;
+	background-color: transparent; 
+	width: 360px;
+	height: 120px;
+	padding:0px; 
+	margin-top: 0px;
+	margin-left: auto; 
+	margin-right: auto;
+	display: flex;
+	flex-flow: column wrap;
+}
+.mybut {
+	background: linear-gradient(158deg, rgba(1,0,10,1) 0%, rgba(75,75,96,1) 35%, rgba(49,58,75,1) 100%);
+	/* background-color: darkblue; */
+	border: solid 1px; 
+	text-align: center;
+	width: 40px;
+	height: 20px;
+	padding: 2px;
+	margin: 2px;
+}

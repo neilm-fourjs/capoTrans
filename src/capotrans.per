@@ -1,7 +1,7 @@
 
 TOPMENU
 	GROUP file ( TEXT="File" )
-		COMMAND cancel ( TEXT="Exit", IMAGE="ic_back" )
+		COMMAND quit
 		COMMAND editshapes
 		COMMAND custshapes
 		COMMAND defshapes
@@ -15,61 +15,59 @@ TOPMENU
 END -- TM
 
 TOOLBAR
-	ITEM cancel ( TEXT="Exit", IMAGE="ic_back" )
-	ITEM clr ( TEXT="Clear", IMAGE="ic_discard" )
-	ITEM accept ( TEXT="Do It!", IMAGE="ic_play" )
+	ITEM quit
+	ITEM clr
 END --
 
-LAYOUT ( TEXT="CapoTrans", IMAGE="capotrans" )
+LAYOUT ( TEXT="CapoTrans", IMAGE="capotrans", STYLE="main2" )
+VBOX
 GRID
 {
-[a  |b  |c  |mn |n6 |s2 ]
-[d  |e  |f  |m7 |n9 |s4 ]
-[g  |h  |i  |n7 ]
-<G                                                     >
- [chords                                              ]
- [lt      |tp      ]
- [kh      |sharp]
- [new                                                 ]
-<                                                      >
-Capo'd Shapes/Positions:
-<T tab1                                                >
- [shapes                                    |score    ]
- [shapes                                    |score    ]
- [shapes                                    |score    ]
- [shapes                                    |score    ]
- [shapes                                    |score    ]
- [shapes                                    |score    ]
- [shapes                                    |score    ]
- [shapes                                    |score    ]
+ [keypad                         ]
+ [                               ]
+ [                               ]
+ [                               ]
+ [                               ]
+ [                               ]
+ [                               ]
+ [                               ]
+<G                                >
+ [chords                         ]
+ [lt      |tp   ]
+ [kh      |sharp] [doit]
+ [new                            ]
+<                                 >
+<G "Capo'd Shapes/Positions:"     >
+ <T tab1                         >
+ [shapes                   |score]
+ [shapes                   |score]
+ [shapes                   |score]
+ [shapes                   |score]
+ [shapes                   |score]
+ [shapes                   |score]
+ [shapes                   |score]
+ [shapes                   |score]
+<                                 >
 }
 END -- GRID
+END -- VBOX
 
 ATTRIBUTES
 
-BUTTON a : na,TEXT="",IMAGE="note_a";
-BUTTON b : nb,TEXT="",IMAGE="note_b";
-BUTTON c : nc,TEXT="",IMAGE="note_c";
-BUTTON d : nd,TEXT="",IMAGE="note_d";
-BUTTON e : ne,TEXT="",IMAGE="note_e";
-BUTTON f : nf,TEXT="",IMAGE="note_f";
-BUTTON g : ng,TEXT="",IMAGE="note_g";
-BUTTON h : fl,TEXT="",IMAGE="note_flat";
-BUTTON i : sp,TEXT="",IMAGE="note_sharp";
+TABLE tab1 : tab1, STYLE="noheading";
 
-BUTTON mn : mn,TEXT="",IMAGE="ct_min";
-BUTTON m7 : m7,TEXT="",IMAGE="ct_maj7";
-BUTTON n7 : n7,TEXT="",IMAGE="ct_7";
-BUTTON n9 : n9,TEXT="",IMAGE="ct_9";
-BUTTON n6 : n6,TEXT="",IMAGE="ct_6";
-BUTTON s4 : s4,TEXT="",IMAGE="ct_sus4";
-BUTTON s2 : s2,TEXT="",IMAGE="ct_sus2";
+WEBCOMPONENT keypad = FORMONLY.l_keypad,COMPONENTTYPE="keypad_music", HEIGHT=550 PIXELS, SIZEPOLICY=FIXED;
 
-BUTTONEDIT chords = FORMONLY.m_chords,ACTION=accept,IMAGE="ic_play";
-LABEL kh : kh, TEXT="KeyHint:";
-RADIOGROUP sharp = FORMONLY.m_sharp,ITEMS=((1,"#"),(0,"b")), ORIENTATION=HORIZONTAL;
+chords = FORMONLY.m_chords;
+
 LABEL lt : lt, TEXT="Transponse:";
 SPINEDIT tp = FORMONLY.m_lev, VALUEMIN=-11, VALUEMAX=11;
+
+BUTTON doit : doit,TEXT="";
+
+LABEL kh : kh, TEXT="KeyHint:";
+RADIOGROUP sharp = FORMONLY.m_sharp,ITEMS=((1,"#"),(0,"b")), ORIENTATION=HORIZONTAL;
+
 new = FORMONLY.m_new, NOENTRY;
 
 PHANTOM FORMONLY.a_pos;
